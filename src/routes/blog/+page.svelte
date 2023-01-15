@@ -5,8 +5,12 @@
 
 <h1>bunch of rambling</h1>
 
-<ul>
-  {#each posts as post}
-    <li><a href={post.path}>{post.metadata.title}</a></li>
-  {/each}
-</ul>
+{#if posts.length === 0}
+  <p>no posts to display</p>
+{:else}
+  <ul>
+    {#each posts as post}
+      <li><a href={`/blog/${post.path}`}>{post.metadata.title}</a></li>
+    {/each}
+  </ul>
+{/if}

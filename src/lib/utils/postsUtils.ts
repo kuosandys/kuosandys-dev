@@ -8,7 +8,7 @@ export async function fetchPosts() {
   const posts = await Promise.all(
     Object.entries(files).map(async ([filePath, loadFile]) => {
       const post = (await loadFile()) as SvelteComponent;
-      const path = `/blog/${filePath.slice(ROUTES_FILEPATH.length, MD_EXTENSION.length * -1)}`;
+      const path = `${filePath.slice(ROUTES_FILEPATH.length, MD_EXTENSION.length * -1)}`;
 
       return { metadata: post.metadata, path };
     })
