@@ -1,0 +1,17 @@
+.post__header-link {
+  position: relative;
+}
+
+.post__header-link::before {
+	content: '#';
+	display: inline;
+	position: absolute;
+	top: 0;
+	left: -1.5ch;
+	line-height: 1;
+	opacity: 0;
+}
+
+.post__header-link:hover::before {
+  opacity: 1;
+}
