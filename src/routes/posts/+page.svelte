@@ -10,7 +10,7 @@
 {:else}
   <ul>
     {#each posts as post}
-      <li><a href={`/blog/${post.path}`}>{post.metadata.title}</a></li>
+      <li><a href={`/posts/${post.path}`}>{post.metadata.title}</a></li>
     {/each}
   </ul>
 {/if}
