@@ -1,8 +1,12 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import Head from '$lib/components/Head.svelte';
+
   export let data: PageData;
   const { metadata, Content } = data;
 </script>
+
+<Head title={metadata.title} />
 
 <article>
   <h1>{metadata.title}</h1>

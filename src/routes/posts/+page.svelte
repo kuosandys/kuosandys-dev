@@ -1,7 +1,10 @@
 <script>
+  import Head from '$lib/components/Head.svelte';
   export let data;
   const { posts } = data;
 </script>
+
+<Head title="posts" />
 
 <h1>bunch of rambling</h1>
 
