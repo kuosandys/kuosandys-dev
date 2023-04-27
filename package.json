@@ -1,5 +1,5 @@
 {
-	"name": "kuosandys.github.io",
+	"name": "kuosandys-dev",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -36,5 +36,6 @@
 	"type": "module",
 	"engines": {
 		"node": ">=18"
-	}
+	},
+	"homepage": "https://kuosandys.dev"
 }
