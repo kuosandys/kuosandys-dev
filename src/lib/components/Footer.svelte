@@ -1,16 +1,10 @@
 <footer>
-	<p>awesome empty footer</p>
-	<ul>
-		<li>
-			<a href="https://github.com/kuosandys" target="_blank" rel="noreferrer">here's my github</a>
-		</li>
-	</ul>
+  <p>&copy; 2023 Sandy S. Kuo</p>
 </footer>
 
 <style>
-	footer {
-		display: flex;
-		justify-content: space-between;
-		padding: 1rem 0;
-	}
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
 </style>

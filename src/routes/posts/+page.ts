@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
+import type { Post } from '../api/posts/+server';
 
 export const load: PageLoad = async ({ fetch }) => {
   const res = await fetch('/api/posts');
@@ -8,7 +9,7 @@ export const load: PageLoad = async ({ fetch }) => {
     throw error(500, 'Error loading posts');
   }
 
-  const posts = await res.json();
+  const posts: Post[] = await res.json();
 
   return { posts };
 };

@@ -1,10 +1,11 @@
 import type { SvelteComponent } from 'svelte';
+import type { Post } from '../../routes/api/posts/+server';
 
 const MD_EXTENSION = '.md';
-const ROUTES_FILEPATH = '/src/routes/blog/posts/';
+const ROUTES_FILEPATH = '/src/routes/posts/content/';
 
-export async function fetchPosts() {
-  const files = import.meta.glob('/src/routes/blog/**/*.md');
+export async function fetchPosts(): Promise<Post[]> {
+  const files = import.meta.glob('/src/routes/posts/**/*.md');
   const posts = await Promise.all(
     Object.entries(files).map(async ([filePath, loadFile]) => {
       const post = (await loadFile()) as SvelteComponent;

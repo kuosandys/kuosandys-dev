@@ -1,6 +1,15 @@
 import { json } from '@sveltejs/kit';
 import { fetchPosts } from '$lib/utils/postsUtils';
 
+export interface Post {
+  metadata: {
+    date: string;
+    title: string;
+    tags: string[];
+  };
+  path: string;
+}
+
 export const GET = async (): Promise<Response> => {
   try {
     const posts = await fetchPosts();

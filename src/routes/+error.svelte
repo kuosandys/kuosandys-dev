@@ -4,9 +4,13 @@
   console.error(`${$page.status}: ${$page.error?.message}`);
 </script>
 
+<svelte:head>
+  <title>made you look | error</title>
+</svelte:head>
+
 <h1>{$page.status}</h1>
 {#if $page.status === 404}
-  <p>not found.</p>
+  <p>Not found.</p>
 {:else}
-  <p>something went unexpectedly wrong.</p>
+  <p>Something went unexpectedly wrong.</p>
 {/if}
