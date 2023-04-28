@@ -1,0 +1,1 @@
+function o(e,a=!0,n="unknown date"){const t=new Date(e);return t?`${t.getFullYear()} ${t.toLocaleString("default",{month:"short"})}${a?` ${t.getDate().toString().padStart(2,"0")}`:""}`:n}export{o as f};
