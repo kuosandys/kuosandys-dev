@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>{TITLE} | home</title>
+  <title>{TITLE}</title>
 </svelte:head>
 
 <Header />

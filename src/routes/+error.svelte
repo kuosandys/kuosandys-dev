@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { TITLE } from '$constants';
   import { page } from '$app/stores';
 
   console.error(`${$page.status}: ${$page.error?.message}`);
 </script>
 
 <svelte:head>
-  <title>made you look | error</title>
+  <title>{TITLE} | error</title>
 </svelte:head>
 
 <h1>{$page.status}</h1>

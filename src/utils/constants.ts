@@ -1,1 +1,1 @@
-export const TITLE = 'kuosandys';
+export const TITLE = 'Sandy S. Kuo';

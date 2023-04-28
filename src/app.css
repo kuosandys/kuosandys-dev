@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 :root {
 	/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   --space-3xs: clamp(0.31rem, calc(0.31rem + 0.00vw), 0.31rem);
@@ -34,6 +32,25 @@
   --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
   --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
   --step-5: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
+
+	/* fonts */
+	--font-sansserif: 'Inter', 'Arial', sans-serif;
+	--font-serif: 'Lora', serif;
+
+	/* colours */
+	--color-neutral-black: hsl(0, 100%, 0%);
+	--color-neutral-dark: hsl(201, 39%, 5%);
+	--color-neutral-light: hsl(60, 20%, 95%);
+	--color-neutral-white: hsl(0, 0%, 100%);
+	--color-neutral-gray-0: hsl(0, 0%, 60%);
+	--color-neutral-gray-1: hsl(0, 0%, 50%);
+	--color-accent-dark: hsla(273, 90%, 90%, 0.3);
+	--color-accent-light: hsla(273, 36%, 70%, 0.5);
+
+	--color-background: var(--color-neutral-light);
+	--color-text: var(--color-neutral-black);
+	--color-text-secondary: var(--color-neutral-gray-1);
+	--color-accent: var(--color-accent-light);
 }
 
 *,
@@ -44,6 +61,11 @@
 
 * {
 	margin: 0;
+}
+
+html {
+	background-color: var(--color-background);
+	color: var(--color-text);
 }
 
 html,
@@ -58,7 +80,7 @@ body {
 	padding: var(--space-xs) var(--space-m);
 	display: flex;
 	flex-direction: column;
-	font-family: 'Inter', sans-serif;
+	font-family: var(--font-sansserif);
 	font-size: var(--step--1);
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
@@ -97,12 +119,13 @@ h6 {
 
 h1,
 h2 {
+	font-family: var(--font-serif);
+	font-style: italic;
 	font-weight: 500;
 	line-height: 1.2;
 }
 
 h1 {
-	font-family: serif;
 	font-size: var(--step-3);
 	margin-bottom: var(--space-s);
 }
@@ -122,10 +145,18 @@ p {
 }
 
 a {
+	box-shadow: inset 0 -1px var(--color-accent);
+	display: inline-block;
 	color: unset;
-	line-height: 1;
+	font-size: smaller;
 	text-decoration: none;
 	text-transform: uppercase;
+	transition: all 0.3s ease-out;
+	width: max-content;
+}
+
+a:hover {
+	box-shadow: inset 0 -10px var(--color-accent);
 }
 
 ul {
@@ -134,4 +165,20 @@ ul {
 
 li {
 	list-style: none;
+}
+
+.text--smaller {
+	color: var(--color-text-secondary);
+	font-size: smaller;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background: var(--color-neutral-dark);
+		--color-text: var(--color-neutral-white);
+		--color-text-secondary: var(--color-neutral-gray-0);
+		--color-accent: var(--color-accent-dark);
+	}
 }

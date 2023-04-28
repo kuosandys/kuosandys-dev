@@ -7,4 +7,8 @@
     display: flex;
     justify-content: space-between;
   }
+
+  p {
+    font-size: x-small;
+  }
 </style>

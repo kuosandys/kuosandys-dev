@@ -2,7 +2,7 @@ export function formatDate(dateString: string, withDate = true, fallback = 'unkn
   const date = new Date(dateString);
   return date
     ? `${date.getFullYear()} ${date.toLocaleString('default', { month: 'short' })}${
-        withDate ? ` ${date.getDate()}` : ''
+        withDate ? ` ${date.getDate().toString().padStart(2, '0')}` : ''
       }`
     : fallback;
 }

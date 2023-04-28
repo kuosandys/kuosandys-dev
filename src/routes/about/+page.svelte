@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>{TITLE} | about</title>
+  <title>About &mdash; {TITLE}</title>
 </svelte:head>
 
 <h1>me</h1>

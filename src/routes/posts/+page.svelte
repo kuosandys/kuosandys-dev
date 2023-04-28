@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-  <title>{TITLE} | posts</title>
+  <title>Posts &mdash; {TITLE}</title>
 </svelte:head>
 
 <h1>words</h1>
@@ -25,7 +25,8 @@
     {#each sortedPosts as post}
       <li>
         <a href={`/posts/${post.path}`}>{post.metadata.title}</a>
-        <span class="post__date">{formatDate(post.metadata.date, false)}</span>
+        <span class="post__description">{post.metadata.description}</span>
+        <span class="text--smaller">{formatDate(post.metadata.date, false)}</span>
       </li>
     {/each}
   </ul>
@@ -35,11 +36,21 @@
   ul {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-m);
   }
 
   li {
     display: flex;
     flex-direction: column;
+    gap: var(--space-3xs);
+  }
+
+  a {
+    font-size: inherit;
+  }
+
+  .post__description {
+    font-size: smaller;
+    font-style: italic;
   }
 </style>

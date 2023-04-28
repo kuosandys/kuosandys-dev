@@ -6,16 +6,16 @@
   export let data: PageData;
 
   const { metadata, Content } = data;
-  const date = formatDate(new Date(metadata.date));
+  const date = formatDate(metadata.date);
 </script>
 
 <svelte:head>
-  <title>{TITLE} | {metadata.title}</title>
+  <title>{metadata.title} &mdash; {TITLE}</title>
 </svelte:head>
 
 <article>
   <h1>{metadata.title}</h1>
-  <span>{date}</span>
+  <span class="text--smaller">{date}</span>
   <!-- <ul>
     tags:
     {#each metadata.tags as tag}

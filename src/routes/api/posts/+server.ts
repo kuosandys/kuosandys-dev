@@ -4,6 +4,7 @@ import { fetchPosts } from '$lib/utils/postsUtils';
 export interface Post {
   metadata: {
     date: string;
+    description: string;
     title: string;
     tags: string[];
   };
