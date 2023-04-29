@@ -1,5 +1,6 @@
 <script lang="ts">
   import { TITLE } from '$constants';
+  import Link from '$lib/components/Link.svelte';
   import { formatDate } from '../../utils/helpers';
   import type { PageData } from './$types';
 
@@ -24,9 +25,8 @@
   <ul>
     {#each sortedPosts as post}
       <li>
-        <a href={`/posts/${post.path}`}>{post.metadata.title}</a>
-        <span class="post__description">{post.metadata.description}</span>
         <span class="text--smaller">{formatDate(post.metadata.date, false)}</span>
+        <Link path={`/posts/${post.path}`}>{post.metadata.title}</Link>
       </li>
     {/each}
   </ul>
@@ -43,14 +43,5 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-3xs);
-  }
-
-  a {
-    font-size: inherit;
-  }
-
-  .post__description {
-    font-size: smaller;
-    font-style: italic;
   }
 </style>

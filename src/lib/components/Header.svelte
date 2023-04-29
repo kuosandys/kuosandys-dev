@@ -1,18 +1,19 @@
 <script>
   import { page } from '$app/stores';
+  import Link from './Link.svelte';
 </script>
 
 <header>
   <nav>
     <ul>
       <li>
-        <a class:active={$page.url.pathname === '/'} href="/">home</a>
+        <Link path="/" active={$page.url.pathname === '/'}>home</Link>
       </li>
       <li>
-        <a class:active={$page.url.pathname.includes('/posts')} href="/posts">posts</a>
+        <Link path="/posts" active={$page.url.pathname === '/posts'}>posts</Link>
       </li>
       <li>
-        <a class:active={$page.url.pathname === '/about'} href="/about">about</a>
+        <Link path="/about" active={$page.url.pathname === '/about'}>about</Link>
       </li>
     </ul>
   </nav>
@@ -30,14 +31,5 @@
 
   li:first-child {
     margin-right: auto;
-  }
-
-  a {
-    box-shadow: none;
-  }
-
-  a:hover,
-  a.active {
-    box-shadow: inset 0 -10px var(--color-accent);
   }
 </style>

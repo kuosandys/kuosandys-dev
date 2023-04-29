@@ -1,5 +1,6 @@
 <script lang="ts">
   import { TITLE } from '$constants';
+  import Link from '$lib/components/Link.svelte';
 </script>
 
 <svelte:head>
@@ -14,5 +15,5 @@
 </p>
 <p>
   If I'm not getting lost on walks or smelling lilacs in the garden, you can find me on
-  <a href="https://github.com/kuosandys" target="_blank" rel="noreferrer">Github</a>.
+  <Link path="https://github.com/kuosandys" target="_blank" rel="noreferrer">Github</Link>.
 </p>
