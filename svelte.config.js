@@ -9,7 +9,11 @@ const config = {
   extensions: ['.svelte', '.md'],
   preprocess: [vitePreprocess(), mdsvex({ extensions: ['.md'] })],
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: '404.html',
+    }),
     alias: {
       $lib: '/src/lib',
       $constants: '/src/utils/constants.ts',
