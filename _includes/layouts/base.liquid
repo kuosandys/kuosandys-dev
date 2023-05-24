@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/static/images/favicon-light.png" rel="icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,500;1,500&family=IBM+Plex+Mono:wght@500&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles/main.css" />
+    <title>{% if title %} {{ title }} &mdash; {% endif %} Sandy S. Kuo </title>
+  </head>
+  <body>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="/" class="menu__link{% if page.url == "/" %}--active{% endif %}">home</a>
+        </li>
+        <li>
+          <a href="/posts" class="menu__link{% if page.url == "/posts/" %}--active{% endif %}">posts</a>
+        </li>
+        <li>
+          <a href="/about" class="menu__link{% if page.url == "/about/" %}--active{% endif %}">about</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Sandy S. Kuo</p>
+  </footer>
+
+  </body>
+</html>
