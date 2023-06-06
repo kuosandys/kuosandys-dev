@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,500;1,500&family=IBM+Plex+Mono:wght@500&display=block"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&display=block"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/styles/main.css" />
@@ -18,15 +18,11 @@
   <header>
     <nav>
       <ul class="menu">
+      {%- for item in menuItems -%}
         <li>
-          <a href="/" class="menu__link{% if page.url == "/" %}--active{% endif %}">home</a>
+          <a href="{{ item.url }}" class="menu__link" {% if page.url == item.url %} aria-current="page" {% endif %}>{{ item.title }}</a>
         </li>
-        <li>
-          <a href="/posts" class="menu__link{% if page.url == "/posts/" %}--active{% endif %}">posts</a>
-        </li>
-        <li>
-          <a href="/about" class="menu__link{% if page.url == "/about/" %}--active{% endif %}">about</a>
-        </li>
+        {%- endfor -%}
       </ul>
     </nav>
   </header>

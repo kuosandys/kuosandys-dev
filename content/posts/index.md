@@ -1,4 +1,4 @@
 ---
+title: Writing
 layout: posts.liquid
-title: Posts
 ---

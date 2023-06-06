@@ -3,12 +3,13 @@ layout: layouts/base.liquid
 eleventyImport:
   collections: ["post"]
 ---
-<h1>{{ title | downcase }}</h1>
+<h1>{{ title }}</h1>
 <ul class="postlist">
 {% for post in collections.post %}
 	<li class="postlist__post">
-		<time class="text--smaller" datetime="{{ post.date }}">{{ post.date | date: "%Y %b %d" }}</time>
 		<a href="{{ post.url }}" class="postlist-link">{{ post.data.title }}</a>
+		<span>{{ post.data.description }}</span>
+		<time class="text--smaller" datetime="{{ post.date }}">{{ post.date | date: "%d %b %Y" }}</time>
 	</li>
 {% endfor %}
 </ul>
