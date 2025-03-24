@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import cat from '../../public/favicon-light.svg?raw';
+---
+
+<BaseLayout>
+  <h1>404</h1>
+  <Fragment set:html={cat}></Fragment>
+  <p>Nothing to see here&hellip;</p>
+</BaseLayout>
+
+<style>
+  :global(svg) {
+    width: 60px;
+    height: 60px;
+  }
+
+  :global(svg g) {
+    fill: var(--color-text);
+  }
+</style>

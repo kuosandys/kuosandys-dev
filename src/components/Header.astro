@@ -1,0 +1,39 @@
+---
+  const currentPage = Astro.url.pathname;
+---
+
+<header>
+  <nav>
+    <ul class='menu'>
+      <li>
+        <a href='/' aria-current={currentPage === '/' ? 'page' : undefined}>Home</a>
+      </li>
+      <li>
+        <a href='/about' aria-current={currentPage === '/about' ? 'page' : undefined}>About</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    padding: var(--space-m-l) 0;
+  }
+
+  ul {
+    display: flex;
+    gap: var(--space-s);
+  }
+
+  ul > li:first-child {
+    margin-right: auto;
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+
+  a:not([aria-current='page']) {
+    text-decoration-color: transparent;
+  }
+</style>

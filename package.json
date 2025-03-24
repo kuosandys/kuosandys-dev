@@ -1,15 +1,20 @@
 {
   "name": "kuosandys-dev",
-  "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "version": "0.0.1",
   "repository": "https://github.com/kuosandys/kuosandys-dev",
   "author": "Sandy S Kuo <62935115+kuosandys@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "yarn astro build && yarn astro preview --host",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.5.4"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
