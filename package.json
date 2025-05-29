@@ -1,8 +1,8 @@
 {
-  "name": "kuosandys-dev",
+  "name": "site",
   "type": "module",
   "version": "0.0.1",
-  "repository": "https://github.com/kuosandys/kuosandys-dev",
+  "repository": "https://github.com/kuosandys/site",
   "author": "Sandy S Kuo <62935115+kuosandys@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {

@@ -1,10 +1,9 @@
-name: build and deploy 
+name: build and deploy
 
 on:
   push:
     branches:
       - main
-
 
 jobs:
   build:
@@ -35,4 +34,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          cname: kuosandys.dev
+          cname: ${{ secrets.CNAME }}
