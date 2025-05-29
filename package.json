@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "yarn astro build && yarn astro preview --host",
+    "format": "npx prettier . --fix",
     "astro": "astro"
   },
   "dependencies": {
